@@ -1,1 +1,85 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Go Royal - Premium Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-mesh">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mega Menu -->
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-menu-header">
+            <button class="mega-menu-close" onclick="closeMegaMenu()"><i class="ri-close-line"></i></button>
+        </div>
+        <div id="megaMenuContent"></div>
+    </div>
+
+    <!-- Navigation & Header Structure -->
+    <header class="app-header glass">
+        <div class="header-top">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <button class="menu-btn" id="menuButton"><i class="ri-menu-line"></i></button>
+                <a href="#" class="logo-container" onclick="renderHome(); return false;">
+                    <img src="Images/logo.png" alt="Go Royal" id="mainLogo">
+                </a>
+            </div>
+
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Search for products, brands and more..." />
+                <button class="search-btn"><i class="ri-search-line"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="ri-moon-line"></i></button>
+            </div>
+        </div>
+
+        <nav class="category-nav" id="categoryNav">
+            <!-- Categories will be injected here by JS -->
+        </nav>
+    </header>
+
+    <!-- Sidebar Drawer -->
+    <aside class="sidebar-drawer" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">Hello, User</div>
+            <button class="close-sidebar" onclick="closeSidebar()"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="sidebar-content" id="sidebarContent">
+            <!-- Sidebar Categories injected here -->
+        </div>
+    </aside>
+
+    <div class="app-body">
+        <main class="content glass" id="mainContent">
+            <div class="breadcrumb" id="breadcrumb" style="display:none;"></div>
+            <!-- Hidden by default, shown when needed -->
+            <div class="page-header" style="display:none;"> <!-- Hidden by default, JS toggles it -->
+                <h1 id="pageTitle">Welcome</h1>
+            </div>
+
+            <div id="contentArea"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
