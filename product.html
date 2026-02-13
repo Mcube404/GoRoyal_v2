@@ -247,9 +247,9 @@
 
             /* Compact Grid */
             .products {
-                grid-template-columns: 1fr 1fr;
-                /* 2 Columns */
-                gap: 12px;
+                grid-template-columns: 1fr;
+                /* Single Column for mobile */
+                gap: 16px;
                 overflow-y: auto;
                 /* Internal scroll if needed */
                 padding-bottom: 80px;
@@ -305,7 +305,14 @@
                 <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
                     <img src="Images/logo.png" alt="Go Royal" style="height: 60px;">
                 </a>
-                <h1 id="pageTitle">Products</h1>
+                <div style="display: flex; flex-direction: column;">
+                    <h1 id="pageTitle" style="font-size: 1.5rem; margin-bottom: 2px;">Products</h1>
+                    <!-- Breadcrumb -->
+                    <div id="breadcrumb"
+                        style="font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+                        Loading...
+                    </div>
+                </div>
             </div>
             <div style="width:40px"></div> <!-- Spacer for balance -->
         </header>
@@ -323,17 +330,24 @@
         // --- Logic ---
         const urlParams = new URLSearchParams(window.location.search);
         const sub = urlParams.get('sub');
-        // We accept the image URL as a param too for simplicity, or re-use the map if we duplicated data.
-        // For robustness, let's re-use the logic to find the image from the map, but since we don't want to duplicate the huge object, 
-        // we can pass the image url in query param or just use a generic one if missing. 
-        // BETTER: Pass the image URL in the query string from index.html to avoid code duplication!
         const img = urlParams.get('img') || '';
+        const cat = urlParams.get('cat') || 'Category';
+        const catId = urlParams.get('catId') || '';
 
         if (!sub) {
             window.location.href = 'index.html';
         }
 
+        // Update Title & Breadcrumb
+        // If catId is present, link to it. Else, just text.
+        const catLink = catId ? `<a href="index.html?cat=${catId}" style="color:var(--accent); text-decoration:none;">${cat}</a>` : `<span style="color:var(--accent);">${cat}</span>`;
+
         document.getElementById('pageTitle').textContent = sub;
+        document.getElementById('breadcrumb').innerHTML = `
+            <a href="index.html" style="color:inherit; text-decoration:none;">Home</a> &gt; 
+            ${catLink} &gt; 
+            <span>${sub}</span>`;
+
         document.title = `${sub} - Go Royal`;
 
         renderProducts(sub, img);

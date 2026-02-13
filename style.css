@@ -45,12 +45,13 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
-    overflow: hidden;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
     transition: background-color 0.5s ease;
 }
 
@@ -112,41 +113,71 @@ body {
 }
 
 /* Layout */
+/* Layout */
 .app-header {
-    position: fixed;
+    position: sticky;
+    /* Use sticky so it takes up space naturally */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
-    padding: 10px 24px;
+    padding: 5px 10px;
+    /* Minimize padding to force corner */
+    background: rgba(10, 10, 20, 0.95);
+    /* Ensure background since it's now in flow */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
+    /* Remove gap */
     transition: all 0.3s ease;
+}
+
+[data-theme="light"] .app-header {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Menu Button - Visible as per user request */
+.menu-btn {
+    display: flex;
+    /* Visible on all screens */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 12px;
+    z-index: 102;
 }
 
 .app-body {
-    padding-top: 140px;
-    /* Space for fixed header */
-    height: 100vh;
-    overflow: hidden;
+    padding-top: 0;
+    /* Sticky header handles space */
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 40px;
 }
 
 .content {
-    height: 100%;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
     padding: 24px 40px;
-    overflow-y: auto;
     border-radius: 0;
-    /* Remove border radius for full width feel */
     background: transparent;
-    /* Let body bg show or use localized glass */
     box-shadow: none;
     border: none;
 }
@@ -156,13 +187,24 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
+    padding: 0;
+    margin-left: -5px;
+    /* Negative margin to flush completely */
 }
 
 #mainLogo {
-    height: 70px;
-    /* Bigger logo */
+    height: 250px;
+    /* Maximum prominence */
     width: auto;
     transition: transform 0.3s ease;
+    display: block;
+}
+
+@media (min-width: 1200px) {
+    #mainLogo {
+        height: 300px;
+        /* Ultra large */
+    }
 }
 
 .logo-container:hover #mainLogo {
@@ -170,61 +212,84 @@ body {
 }
 
 /* Search Bar in Header */
+/* Search Bar in Header */
+/* Search Bar in Header */
 .search-container {
     flex: 1;
-    max-width: 600px;
+    max-width: 500px;
     position: relative;
     display: flex;
     align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    /* Perfect Pill */
+    padding: 0 16px;
+    /* Clean padding */
+    transition: all 0.3s ease;
+    height: 44px;
+    /* Fixed height for consistency */
+}
+
+[data-theme="light"] .search-container {
+    background: #f5f5f5;
+    border-color: #ddd;
+}
+
+.search-container:focus-within {
+    /* No effects */
+    border-color: var(--glass-border);
+    background: var(--card-bg);
+    box-shadow: none;
 }
 
 .search-input {
+    flex: 1;
     width: 100%;
-    background: var(--card-bg);
-    border: var(--glass-border);
-    padding: 12px 20px;
-    border-radius: 8px 0 0 8px;
-    /* Squared off for button */
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    /* Remove padding to center vertically */
     color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
-    outline: none;
-    backdrop-filter: blur(10px);
+    outline: none !important;
+    font-size: 1rem;
+    height: 100%;
 }
 
 .search-btn {
-    background: var(--accent);
-    color: #000;
-    border: none;
-    padding: 0 20px;
+    background: transparent !important;
+    color: var(--text-secondary);
+    border: none !important;
+    width: 40px;
     height: 100%;
-    border-radius: 0 8px 8px 0;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background 0.3s;
-    /* Match input height - input is roughly 42px total approx */
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.search-btn:hover {
-    background: #fff;
-}
-
-/* Horizontal Category Nav */
-/* Horizontal Category Nav */
-.category-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center items unique from previous left-align */
-    gap: 15px;
-    /* Reduced gap from 24px */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+    margin-right: -8px;
+    /* Pull right slightly */
+}
+
+.search-btn:hover {
+    color: var(--accent);
+    /* No background change */
+}
+
+/* Category Nav - Wrapping allowed */
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align under logo */
+    gap: 12px;
     width: 100%;
-    /* overflow-x: auto;  Disable scroll if possible */
-    flex-wrap: nowrap;
-    padding-bottom: 4px;
+    flex-wrap: wrap;
+    /* Allow wrapping for full visibility */
+    padding-top: 4px;
 }
 
 .category-nav::-webkit-scrollbar {
@@ -234,17 +299,17 @@ body {
 .nav-item {
     color: var(--text-secondary);
     font-weight: 500;
-    font-size: 0.85rem;
-    /* Reduced from 0.95rem */
+    font-size: 0.75rem;
+    /* Small font for fit */
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.3s ease;
-    padding: 6px 8px;
-    /* Reduced from 6px 12px */
+    padding: 4px 8px;
+    /* Compact padding */
     border-radius: 6px;
     position: relative;
-    flex-shrink: 1;
-    /* Allow efficient packing */
+    flex-shrink: 0;
+    /* Don't squish labels */
 }
 
 .nav-item:hover {
@@ -275,9 +340,303 @@ body {
 
 /* Mega Menu Adjustment */
 .mega-menu {
-    top: 130px;
-    /* Align below header approximately */
-    height: calc(100vh - 130px);
+    top: 110px;
+    /* Align below compact header */
+    height: calc(100vh - 110px);
+    padding-top: 20px;
+    background: rgba(10, 10, 20, 0.98);
+    /* Less transp for readability */
+}
+
+[data-theme="light"] .mega-menu {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.5px;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #ffd700;
+    -webkit-text-fill-color: #ffd700;
+}
+
+/* Categories */
+.mega-cat-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.mega-cat-group:last-child {
+    border-bottom: none;
+}
+
+.mega-cat-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.mega-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    padding-left: 12px;
+}
+
+.mega-sub-item {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"] .mega-sub-item {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.mega-sub-item:hover {
+    color: var(--text-primary);
+    background: var(--accent-glow);
+    padding-left: 12px;
+}
+
+/* Adjust Header for Mobile/Menu integration */
+@media (max-width: 480px) {
+    .sidebar {
+        display: none !important;
+    }
+
+    .header-top>div:first-child {
+        gap: 8px;
+    }
+
+    .menu-btn {
+        display: flex !important;
+        z-index: 1001;
+        position: relative;
+    }
+
+    #pageTitle {
+        display: none;
+    }
+
+    .mobile-logo-container {
+        margin-right: auto;
+        z-index: 1001;
+        position: relative;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+}
+
+.app-body {
+    padding-top: 0;
+    /* Sticky header handles space */
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    margin-left: -5px;
+    /* Negative margin to flush completely */
+}
+
+#mainLogo {
+    height: 140px;
+    /* Huge default */
+    width: auto;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+@media (min-width: 1200px) {
+    #mainLogo {
+        height: 180px;
+        /* Even bigger on large screens */
+    }
+}
+
+.logo-container:hover #mainLogo {
+    transform: scale(1.05);
+}
+
+/* Search Bar in Header */
+/* Search Bar in Header */
+/* Search Bar in Header */
+.search-container {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    /* Perfect Pill */
+    padding: 0 16px;
+    /* Clean padding */
+    transition: all 0.3s ease;
+    height: 44px;
+    /* Fixed height for consistency */
+}
+
+[data-theme="light"] .search-container {
+    background: #f5f5f5;
+    border-color: #ddd;
+}
+
+.search-container:focus-within {
+    /* No effects */
+    border-color: var(--glass-border);
+    background: var(--card-bg);
+    box-shadow: none;
+}
+
+.search-input {
+    flex: 1;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    /* Remove padding to center vertically */
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    outline: none !important;
+    font-size: 1rem;
+    height: 100%;
+}
+
+.search-btn {
+    background: transparent !important;
+    color: var(--text-secondary);
+    border: none !important;
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+    margin-right: -8px;
+    /* Pull right slightly */
+}
+
+.search-btn:hover {
+    color: var(--accent);
+    /* No background change */
+}
+
+/* Category Nav - Wrapping allowed */
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align under logo */
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+    /* Allow wrapping for full visibility */
+    padding-top: 4px;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.75rem;
+    /* Small font for fit */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    /* Compact padding */
+    border-radius: 6px;
+    position: relative;
+    flex-shrink: 0;
+    /* Don't squish labels */
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+
+/* Mega Menu Adjustment */
+.mega-menu {
+    top: 110px;
+    /* Align below compact header */
+    height: calc(100vh - 110px);
     padding-top: 20px;
     background: rgba(10, 10, 20, 0.98);
     /* Less transp for readability */
@@ -414,8 +773,10 @@ body {
 .card {
     background: var(--card-bg);
     border: var(--glass-border);
-    padding: 24px;
-    border-radius: 24px;
+    padding: 16px;
+    /* Reduced padding */
+    border-radius: 20px;
+    /* Slightly smaller radius */
     position: relative;
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -428,29 +789,32 @@ body {
 }
 
 .card .title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    /* Smaller title */
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .card .meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
 .subgrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* Compact grid */
+    gap: 16px;
+    /* Reduced gap */
+    margin-top: 24px;
 }
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Larger cards for products */
-    gap: 32px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Compact grid */
+    gap: 24px;
+    margin-top: 24px;
 }
 
 /* Badges */
@@ -503,6 +867,31 @@ body {
     pointer-events: none;
 }
 
+/* Breadcrumb */
+.breadcrumb {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+/* Page Header (Title + Breadcrumb container) */
+.page-header {
+    margin-bottom: 24px;
+}
+
 @keyframes ripple {
     to {
         transform: scale(4);
@@ -511,38 +900,66 @@ body {
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 800px) {
-    .app {
-        flex-direction: column;
-        padding: 10px;
+    .app-body {
+        padding-top: 130px;
+        /* Adjust for taller mobile header if needed, or keeping it similar */
     }
 
-    .sidebar {
-        width: 100%;
-        height: auto;
-        max-height: 250px;
+    .content {
+        padding: 16px;
+        /* Reduced padding */
     }
 
-    .header-row {
-        flex-direction: column;
-        gap: 16px;
-        align-items: stretch;
+    .header-top {
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        gap: 12px;
+        padding-bottom: 4px;
+        /* Space for nav */
     }
 
+    /* Logo Group */
+    .header-top>div:first-child {
+        order: 1;
+        flex: 1;
+        /* Take available space */
+    }
+
+    /* Theme Toggle */
+    .header-actions {
+        order: 2;
+    }
+
+    /* Search Bar - Full Width on new line */
     .search-container {
-        margin: 0;
+        order: 3;
+        width: 100%;
+        max-width: none;
+        margin-top: 4px;
+        min-width: 100%;
+        /* Force break */
     }
 }
 
 /* Logo Adjustments */
-.mobile-logo-container img {
-    height: 80px !important;
-    /* Increased to 80px */
+.mobile-logo-container img,
+#mainLogo {
+    height: 60px;
+    /* Increased from 50px */
     width: auto;
     transition: transform 0.3s ease;
 }
 
-.mobile-logo-container:hover img {
+@media (min-width: 801px) {
+    #mainLogo {
+        height: 50px;
+        /* Compact logo */
+    }
+}
+
+.logo-container:hover img {
     transform: scale(1.05);
 }
 
@@ -550,11 +967,11 @@ body {
 /* Mega Menu (Dropdown Style) */
 .mega-menu {
     position: fixed;
-    top: 130px;
+    top: 110px;
     /* Matches header height approx */
     left: 0;
     width: 100%;
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 110px);
     overflow-y: auto;
     background: rgba(15, 15, 30, 0.98);
     backdrop-filter: blur(20px);
@@ -750,12 +1167,11 @@ body {
         display: none !important;
     }
 
-    .header-row>div:first-child {
-        justify-content: flex-start !important;
-        gap: 16px;
+    .header-top>div:first-child {
+        gap: 8px;
     }
 
-    .menu-toggle {
+    .menu-btn {
         display: flex !important;
         z-index: 1001;
         position: relative;

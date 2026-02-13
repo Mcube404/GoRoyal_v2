@@ -129,6 +129,24 @@ let currentCatId = null;
 initTheme();
 renderNav();
 renderSidebarMenu(); // New
+updateMenuPosition(); // Initial position
+
+// --- Dynamic Layout Logic ---
+function updateMenuPosition() {
+    const header = document.querySelector('.app-header');
+    const megaMenu = document.getElementById('megaMenu');
+    if (header && megaMenu) {
+        const height = header.offsetHeight;
+        megaMenu.style.top = `${height}px`;
+        megaMenu.style.height = `calc(100vh - ${height}px)`;
+        megaMenu.style.maxHeight = `calc(100vh - ${height}px)`;
+    }
+}
+
+window.addEventListener('resize', updateMenuPosition);
+// Also update after DOM load just in case
+window.addEventListener('scroll', updateMenuPosition); // Sticky might shift? No, sticky height is constant unless resize.
+
 
 // --- Mobile Menu Logic ---
 const megaMenu = document.getElementById('megaMenu');
@@ -216,6 +234,8 @@ function updateToggleIcon(theme) {
 }
 
 // State Persistence
+const urlParams = new URLSearchParams(window.location.search);
+const urlCat = urlParams.get('cat');
 const savedCat = sessionStorage.getItem('activeCategory');
 const savedSearch = sessionStorage.getItem('searchQuery');
 
@@ -225,9 +245,16 @@ if (savedSearch) {
 }
 
 // Restore Category or Default
-if (savedCat) {
+if (urlCat) {
+    // URL param takes precedence (Deep Linking)
+    currentCatId = urlCat;
+    sessionStorage.setItem('activeCategory', urlCat);
+    renderNav();
+    renderSubcategories(urlCat);
+    updateActiveNav(urlCat);
+} else if (savedCat) {
     currentCatId = savedCat;
-    renderNav(); // Ensure nav is clear
+    renderNav();
     renderSubcategories(savedCat);
     updateActiveNav(savedCat);
 } else {
@@ -237,8 +264,9 @@ if (savedCat) {
 
 // --- Search Logic ---
 // ... (search logic remains mostly same, just check if references need updating)
-searchInput.addEventListener('input', (e) => {
-    const term = e.target.value.toLowerCase().trim();
+// --- Search Logic ---
+function performSearch() {
+    const term = searchInput.value.toLowerCase().trim();
     sessionStorage.setItem('searchQuery', term);
 
     if (term.length < 2) {
@@ -261,7 +289,53 @@ searchInput.addEventListener('input', (e) => {
     });
 
     renderSearchResults(results, term);
-});
+}
+
+searchInput.addEventListener('input', performSearch);
+
+// Add listener for search button
+const searchBtn = document.querySelector('.search-btn');
+if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+        const term = searchInput.value.trim();
+        if (term) {
+            performSearch();
+        } else {
+            searchInput.focus();
+        }
+    });
+}
+
+function renderSearchResults(results, term) {
+    // Hide Page Header
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader) pageHeader.style.display = 'block';
+
+    document.getElementById('pageTitle').textContent = `Search: "${term}"`;
+    document.getElementById('breadcrumb').innerHTML = `<a href="#" onclick="renderHome(); return false;" style="color:inherit; text-decoration:none;">HOME</a> / Search`;
+
+    if (results.length === 0) {
+        contentArea.innerHTML = `<div class="card animate-in"><div class="card-content"><h3>No Results Found</h3><p>We couldn't find matches for "${term}". Try checking your spelling or use different keywords.</p></div></div>`;
+        return;
+    }
+
+    let html = '<div class="subgrid">';
+    results.forEach((item, i) => {
+        const s = item.sub;
+        html += `
+        <div class="card animate-in" style="animation-delay: ${i * 50}ms; cursor: pointer; padding: 12px; display: flex; align-items: center;" data-sub="${s.name}">
+            <div style="flex: 1; padding-right: 12px;">
+                <div class="title" style="margin-bottom: 2px; font-size: 1.1rem;">${s.name}</div>
+                <div class="meta" style="font-size: 0.85rem;">In ${item.catLabel}</div>
+            </div>
+            <div style="width: 70px; height: 70px; background: url('${s.img}') center/cover no-repeat; border-radius: 12px; flex-shrink: 0;"></div>
+        </div>`;
+    });
+    html += '</div><div id="productsHolder"></div>';
+    contentArea.innerHTML = html;
+
+    addCardHandlers();
+}
 
 // ... (filterAll function)
 
@@ -312,27 +386,17 @@ function renderNav() {
                 closeMegaMenu();
                 renderHome();
             } else {
-                // Open Mega Menu Slide Down
-                // Check if already open and same cat?
-                if (megaMenu.classList.contains('active') && currentCatId === catId) {
-                    closeMegaMenu(); // Toggle off
-                } else {
-                    currentCatId = catId;
-                    renderMegaMenu(catId);
-                    megaMenu.classList.add('active');
-                    overlay.classList.add('active'); // Use overlay to click-off
-
-                    // Also render the page content immediately? 
-                    // User said "popwindow sliding down", commonly this is for navigation, not page content.
-                    // But if I click "Electronics", I probably want to see Electronics page too?
-                    // Let's render the detailed page BEHIND the menu, so when they close it or click a sub, it's there.
-                    renderSubcategories(catId);
-                    updateActiveNav(catId);
-                }
+                // Standard Navigation: Go to Category Page
+                // We removed the Mega Menu trigger to prevent duplicate views
+                closeMegaMenu(); // Ensure menu is closed if open
+                currentCatId = catId;
+                renderSubcategories(catId);
+                updateActiveNav(catId);
             }
         });
     });
 }
+
 
 function updateActiveNav(id) {
     navList.querySelectorAll('.nav-item').forEach(x => {
@@ -343,6 +407,11 @@ function updateActiveNav(id) {
 
 function renderSubcategories(catId, filter = '') {
     const cat = categories.find(c => c.id === catId);
+
+    // Show Page Header
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader) pageHeader.style.display = 'block';
+
     document.getElementById('pageTitle').textContent = cat.label;
     document.getElementById('breadcrumb').innerHTML = `<a href="#" onclick="renderHome(); return false;" style="color:inherit; text-decoration:none;">HOME</a> / ${cat.label}`;
 
@@ -376,6 +445,10 @@ function renderSubcategories(catId, filter = '') {
 }
 
 function renderHome() {
+    // Hide Page Header for Home (it has its own banner)
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader) pageHeader.style.display = 'none';
+
     document.getElementById('pageTitle').textContent = 'Welcome';
     document.getElementById('breadcrumb').innerHTML = `<a href="#" onclick="renderHome(); return false;" style="color:inherit; text-decoration:none;">HOME</a>`;
     currentCatId = 'home';
@@ -450,18 +523,25 @@ function addCardHandlers() {
 function showProducts(sub) {
     // Find image for this subcategory
     let subImg = '';
-    // Search all cats to find the sub img
-    Object.values(subcategories).forEach(list => {
+    let catLabel = 'Products';
+    let parentCatId = '';
+
+    // Search all cats
+    Object.keys(subcategories).forEach(catId => {
+        const list = subcategories[catId];
         const found = list.find(s => s.name === sub);
-        if (found) subImg = found.img;
+        if (found) {
+            subImg = found.img;
+            parentCatId = catId;
+            const parent = categories.find(c => c.id === catId);
+            if (parent) catLabel = parent.label;
+        }
     });
 
-    // Fallback if no image found (though unlikely with current data)
     if (!subImg) subImg = 'Images/logo.png';
 
-    // Redirect to product page
-    // Ensure we are passing the correct path relative to current location
-    window.location.href = `product.html?sub=${encodeURIComponent(sub)}&img=${encodeURIComponent(subImg)}`;
+    // Redirect to product page with IDs
+    window.location.href = `product.html?sub=${encodeURIComponent(sub)}&img=${encodeURIComponent(subImg)}&cat=${encodeURIComponent(catLabel)}&catId=${encodeURIComponent(parentCatId)}`;
 }
 
 // --- Interactivity ---
