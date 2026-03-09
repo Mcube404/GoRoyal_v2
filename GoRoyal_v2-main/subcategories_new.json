@@ -1,0 +1,1030 @@
+{
+    "automobiles": [
+        {
+            "name": "bikes",
+            "img": "Images/bike.png",
+            "topRatedUrl": "https://www.harley-davidson.com/top-rated",
+            "sponsoredUrl": "https://www.harley-davidson.com/sponsored",
+            "items": [
+                "gear",
+                "non gear",
+                "Sports bike",
+                "Adventure Bike",
+                "Naked Bike",
+                "Cruiser"
+            ]
+        },
+        {
+            "name": "cars",
+            "img": "Images/car1.png",
+            "topRatedUrl": "https://www.tesla.com/models",
+            "sponsoredUrl": "https://www.tesla.com/inventory",
+            "items": [
+                "SUV",
+                "sedan",
+                "Hatch back",
+                "sports edition",
+                "Coupe"
+            ]
+        },
+        {
+            "name": "Ev",
+            "img": "Images/ev1.png",
+            "topRatedUrl": "https://www.lucidmotors.com/air",
+            "sponsoredUrl": "https://www.lucidmotors.com/reserve",
+            "items": [
+                "cars",
+                "bikes",
+                "bi cycle"
+            ]
+        },
+        {
+            "name": "bike accessories",
+            "img": "Images/bikeacc.png",
+            "topRatedUrl": "https://www.revzilla.com/best-sellers",
+            "sponsoredUrl": "https://www.revzilla.com/sale",
+            "items": [
+                "riding gears",
+                "fog lights",
+                "cleaning kit",
+                "Crash Guard"
+            ]
+        },
+        {
+            "name": "car accessories",
+            "img": "Images/caracc.png",
+            "topRatedUrl": "https://www.weathertech.com/top-products",
+            "sponsoredUrl": "https://www.weathertech.com/specials",
+            "items": [
+                "audio system",
+                "cleaning kit",
+                "air freshner"
+            ]
+        },
+        {
+            "name": "Bicycle",
+            "img": "Images/bicycle.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "gear",
+                "non gear"
+            ]
+        },
+        {
+            "name": "Helmets",
+            "img": "Images/helmets.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "full face",
+                "half face",
+                "bi cycle helmets"
+            ]
+        }
+    ],
+    "watches": [
+        {
+            "name": "Smart watch",
+            "img": "Images/smartw.png",
+            "topRatedUrl": "https://www.apple.com/watch/ultra",
+            "sponsoredUrl": "https://www.apple.com/watch/series-9",
+            "items": []
+        },
+        {
+            "name": "Analog watch",
+            "img": "Images/analogw.png",
+            "topRatedUrl": "https://www.rolex.com/watches/submariner",
+            "sponsoredUrl": "https://www.rolex.com/watches/new-watches",
+            "items": []
+        },
+        {
+            "name": "Digital watch",
+            "img": "Images/digitalw.png",
+            "topRatedUrl": "https://www.casio.com/g-shock",
+            "sponsoredUrl": "https://www.casio.com/pro-trek",
+            "items": []
+        },
+        {
+            "name": "Digi log Watch",
+            "img": "Images/digilogw.png",
+            "topRatedUrl": "https://www.tagheuer.com/carrera",
+            "sponsoredUrl": "https://www.tagheuer.com/monaco",
+            "items": []
+        },
+        {
+            "name": "Vintage Series",
+            "img": "Images/vintagew.png",
+            "topRatedUrl": "https://www.patek.com/en/collection/grand-complications",
+            "sponsoredUrl": "https://www.patek.com/en/collection/nautilus",
+            "items": []
+        },
+        {
+            "name": "womens watch",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        }
+    ],
+    "electronics": [
+        {
+            "name": "Television",
+            "img": "Images/tv.png",
+            "topRatedUrl": "https://www.sony.com/electronics/tv",
+            "sponsoredUrl": "https://www.sony.com/electronics/bravia",
+            "items": [
+                "cars",
+                "bikes",
+                "bi cycle"
+            ]
+        },
+        {
+            "name": "Mobile",
+            "img": "Images/phone.png",
+            "topRatedUrl": "https://www.samsung.com/galaxy-s24",
+            "sponsoredUrl": "https://www.samsung.com/galaxy-z-fold5",
+            "items": [
+                "Smart phone",
+                "tablets",
+                "fold phone",
+                "keypad phone",
+                "Flip phone"
+            ]
+        },
+        {
+            "name": "Laptop",
+            "img": "Images/laptop.png",
+            "topRatedUrl": "https://www.apple.com/macbook-pro",
+            "sponsoredUrl": "https://www.apple.com/macbook-air",
+            "items": [
+                "Gaming",
+                "Business",
+                "touch"
+            ]
+        },
+        {
+            "name": "Accessories",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "belts",
+                "sunglasses",
+                "socks",
+                "hair product kit",
+                "makeup kit"
+            ]
+        },
+        {
+            "name": "Camera",
+            "img": "Images/camera1.png",
+            "topRatedUrl": "https://www.canon.com/eos-r5",
+            "sponsoredUrl": "https://www.canon.com/eos-r6",
+            "items": [
+                "Action Camera",
+                "DSLR",
+                "Polaroid Camera",
+                "Stabilizer"
+            ]
+        },
+        {
+            "name": "Headphones",
+            "img": "Images/headphones.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "PC",
+            "img": "Images/pc.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Graphics Gard",
+                "SSD",
+                "PSU",
+                "Motherboard",
+                "Cabinet",
+                "RAM",
+                "Processor",
+                "Cooler",
+                "Monitor"
+            ]
+        },
+        {
+            "name": "Printer",
+            "img": "Images/printer.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Laser Pinter",
+                "Ink-Jet Printer"
+            ]
+        },
+        {
+            "name": "Router",
+            "img": "Images/router.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "Projectors",
+            "img": "Images/projectors.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Laser Projector",
+                "LCD Projector"
+            ]
+        },
+        {
+            "name": "Drone",
+            "img": "Images/drone.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "FPV Drone",
+                "GPS/Camera Drone"
+            ]
+        }
+    ],
+    "home-appliances": [
+        {
+            "name": "Refrigerator",
+            "img": "Images/fridge.png",
+            "topRatedUrl": "https://www.lg.com/refrigerators",
+            "sponsoredUrl": "https://www.lg.com/instaview",
+            "items": [
+                "side by side",
+                "double door",
+                "Smart"
+            ]
+        },
+        {
+            "name": "Washing Machine",
+            "img": "Images/washingmachine.png",
+            "topRatedUrl": "https://www.whirlpool.com/washers",
+            "sponsoredUrl": "https://www.whirlpool.com/dryers",
+            "items": [
+                "top load",
+                "front load"
+            ]
+        },
+        {
+            "name": "Air fryer",
+            "img": "Images/airfryer.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "Air conditioner",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Central AC",
+                "Window AC",
+                "Split AC"
+            ]
+        },
+        {
+            "name": "Dish washer",
+            "img": "Images/dishwasher.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "Kitchen supplies",
+            "img": "Images/kitchensupplies.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "China Cabinet",
+                "China set"
+            ]
+        },
+        {
+            "name": "Air purifier",
+            "img": "Images/airpurifier.png",
+            "topRatedUrl": "https://www.dyson.com/air-purifiers",
+            "sponsoredUrl": "https://www.dyson.com/vacuum-cleaners",
+            "items": []
+        },
+        {
+            "name": "water purifier",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "iron box",
+            "img": "Images/iron-box.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        }
+    ],
+    "bags-and-footwear": [
+        {
+            "name": "womens footwear",
+            "img": "Images/womens-footwear.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "casual shoes",
+                "flat sandals",
+                "heals",
+                "formal",
+                "cut shoes",
+                "formal shoes",
+                "sports shoes"
+            ]
+        },
+        {
+            "name": "Kids footwear",
+            "img": "Images/kids-footwear.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "boys shoes",
+                "girls shoes",
+                "sandals",
+                "flipflops",
+                "casual shoes"
+            ]
+        },
+        {
+            "name": "Mens footwear",
+            "img": "Images/mens-footwear.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "casual shoes",
+                "formal shoes",
+                "sports shoes",
+                "boots",
+                "loafers",
+                "slippers"
+            ]
+        },
+        {
+            "name": "Womens bag",
+            "img": "Images/womens-bag.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "backpack",
+                "handbag",
+                "slingbag",
+                "clutches",
+                "wallets",
+                "Tote Bag"
+            ]
+        },
+        {
+            "name": "Mens bags",
+            "img": "Images/mens-bags.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "backpack",
+                "crossbody bag",
+                "laptop bag"
+            ]
+        },
+        {
+            "name": "Travel bags",
+            "img": "Images/travel-bags.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "backpacks",
+                "trollies"
+            ]
+        }
+    ],
+    "home-decor": [
+        {
+            "name": "Wood Furniture",
+            "img": "Images/woodfurniture.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "kitchen storage",
+            "img": "Images/kitchenstorage.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "China Cabinet",
+                "China set"
+            ]
+        },
+        {
+            "name": "home textile",
+            "img": "Images/hometextile.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "Bedroom accessories",
+            "img": "Images/bedroom.png",
+            "topRatedUrl": "https://www.potterybarn.com/bedroom",
+            "sponsoredUrl": "https://www.potterybarn.com/lighting",
+            "items": [
+                "bed",
+                "mattress",
+                "wardrobe",
+                "standing mirror",
+                "Dressing table"
+            ]
+        }
+    ],
+    "fitness": [
+        {
+            "name": "Treadmill",
+            "img": "Images/treadmill.png",
+            "topRatedUrl": "https://www.onepeloton.com/tread",
+            "sponsoredUrl": "https://www.onepeloton.com/bike",
+            "items": []
+        },
+        {
+            "name": "FItness bikes",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "gear",
+                "non gear",
+                "Sports bike",
+                "Adventure Bike",
+                "Naked Bike",
+                "Cruiser"
+            ]
+        },
+        {
+            "name": "Walking pods",
+            "img": "Images/walkingpad.png",
+            "topRatedUrl": "https://www.walkingpad.com/r1-pro",
+            "sponsoredUrl": "https://www.walkingpad.com/a1-pro",
+            "items": []
+        },
+        {
+            "name": "Home gym",
+            "img": "Images/homegym.png",
+            "topRatedUrl": "https://www.bowflex.com/home-gyms",
+            "sponsoredUrl": "https://www.bowflex.com/selecttech",
+            "items": []
+        },
+        {
+            "name": "Gym accessoires",
+            "img": "Images/gymaccessoires.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        }
+    ],
+    "sports": [
+        {
+            "name": "Cricket",
+            "img": "Images/cricket.png",
+            "topRatedUrl": "https://www.adidas.com/cricket-bats",
+            "sponsoredUrl": "https://www.adidas.com/cricket-shoes",
+            "items": [
+                "kit bag",
+                "bat",
+                "ball",
+                "cricket boots"
+            ]
+        },
+        {
+            "name": "Football",
+            "img": "Images/football.png",
+            "topRatedUrl": "https://www.nike.com/football-boots",
+            "sponsoredUrl": "https://www.nike.com/football-jerseys",
+            "items": [
+                "boots",
+                "gloves",
+                "kit"
+            ]
+        },
+        {
+            "name": "Badmiton",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "racket",
+                "shoes",
+                "cork"
+            ]
+        },
+        {
+            "name": "Swimming",
+            "img": "Images/swimming.png",
+            "topRatedUrl": "https://www.speedo.com/swimwear",
+            "sponsoredUrl": "https://www.speedo.com/goggles",
+            "items": [
+                "swim dress men",
+                "swim dress women",
+                "goggles",
+                "cap",
+                "safety tube"
+            ]
+        },
+        {
+            "name": "Table games",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "table tennis",
+                "snooker table",
+                "air hockey",
+                "all in one"
+            ]
+        },
+        {
+            "name": "Boxing",
+            "img": "Images/boxing.png",
+            "topRatedUrl": "https://www.everlast.com/gloves",
+            "sponsoredUrl": "https://www.everlast.com/heavy-bags",
+            "items": [
+                "gloves",
+                "punching bag",
+                "guard kit"
+            ]
+        },
+        {
+            "name": "Archery",
+            "img": "Images/archery.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Recurve Bow",
+                "Compound Bow",
+                "Arrows",
+                "Sight",
+                "Stabilizer",
+                "Scope"
+            ]
+        },
+        {
+            "name": "Skating",
+            "img": "Images/skating.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "guard kit",
+                "Helmet",
+                "shoes"
+            ]
+        }
+    ],
+    "kids-and-toddlers": [
+        {
+            "name": "girls clothing",
+            "img": "Images/girls-clothing.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "frock",
+                "dress set",
+                "t shirt",
+                "shorts",
+                "cap",
+                "sunglasses",
+                "jeans",
+                "shirt",
+                "jeans",
+                "sweater",
+                "night wear",
+                "kurta set"
+            ]
+        },
+        {
+            "name": "Boys clothing",
+            "img": "Images/boys-clothing.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "co ords",
+                "t shrit",
+                "shorts",
+                "cap",
+                "sunglasses",
+                "jeans",
+                "shirt",
+                "sweater",
+                "night wear",
+                "blazers"
+            ]
+        },
+        {
+            "name": "kids accessories",
+            "img": "Images/kidsaccessories.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "belts",
+                "sunglasses",
+                "socks",
+                "hair product kit",
+                "makeup kit"
+            ]
+        },
+        {
+            "name": "infants",
+            "img": "Images/infants.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Body suits",
+                "clothing set",
+                "t shirt",
+                "bottom wear"
+            ]
+        }
+    ],
+    "pet-supplies": [
+        {
+            "name": "dog",
+            "img": "Images/dog.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "dog food",
+                "dog bed",
+                "dog shampoo"
+            ]
+        },
+        {
+            "name": "Cat",
+            "img": "Images/cat.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "cat food",
+                "litter sand",
+                "cat bed"
+            ]
+        },
+        {
+            "name": "aquarium",
+            "img": "Images/aquarium.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        }
+    ],
+    "men": [
+        {
+            "name": "top Wear",
+            "img": "https://images.unsplash.com/photo-1550246140-5119ae4790b8?w=400&q=80",
+            "topRatedUrl": "https://www.ralphlauren.com/men-clothing-shirts",
+            "sponsoredUrl": "https://www.ralphlauren.com/men-clothing-polo-shirts",
+            "items": [
+                "tops",
+                "t shirt",
+                "shirt",
+                "co ords",
+                "blazers",
+                "tunics"
+            ]
+        },
+        {
+            "name": "Bottom wear",
+            "img": "https://images.unsplash.com/photo-1504198458649-3128b932f49e?w=400&q=80",
+            "topRatedUrl": "https://www.levi.com/men/jeans",
+            "sponsoredUrl": "https://www.levi.com/men/pants",
+            "items": [
+                "formal pants",
+                "regular jeans",
+                "baggy jeans",
+                "cargos",
+                "chinos"
+            ]
+        },
+        {
+            "name": "Inner wear",
+            "img": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&q=80",
+            "topRatedUrl": "https://www.calvinklein.us/men/underwear",
+            "sponsoredUrl": "https://www.calvinklein.us/men/new-arrivals",
+            "items": [
+                "panties",
+                "bras",
+                "shorts"
+            ]
+        },
+        {
+            "name": "ethnic wear",
+            "img": "https://images.unsplash.com/photo-1507679799987-9755eb1e1c17?w=400&q=80",
+            "topRatedUrl": "https://www.manyavar.com/men/kurta-pajama",
+            "sponsoredUrl": "https://www.manyavar.com/men/sherwani",
+            "items": [
+                "silk sarees",
+                "cotton sarees",
+                "kurta set",
+                "lehangas",
+                "half sarees",
+                "dupattas"
+            ]
+        },
+        {
+            "name": "Sports wear",
+            "img": "https://images.unsplash.com/photo-1518459031867-a89b944bffe4?w=400&q=80",
+            "topRatedUrl": "https://www.adidas.com/men-training",
+            "sponsoredUrl": "https://www.adidas.com/men-running",
+            "items": [
+                "t shirt",
+                "tracks",
+                "sports bra",
+                "shoes"
+            ]
+        },
+        {
+            "name": "Winter wear",
+            "img": "https://images.unsplash.com/photo-1591559489278-654cb2960f25?w=400&q=80",
+            "topRatedUrl": "https://www.thenorthface.com/men-jackets",
+            "sponsoredUrl": "https://www.thenorthface.com/men-accessories",
+            "items": [
+                "jackets",
+                "sweatshirts",
+                "hoodies",
+                "sweaters",
+                "coats"
+            ]
+        },
+        {
+            "name": "Accessories",
+            "img": "Images/accessories.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "belts",
+                "sunglasses",
+                "socks",
+                "hair product kit",
+                "makeup kit"
+            ]
+        }
+    ],
+    "women": [
+        {
+            "name": "Top wear",
+            "img": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=80",
+            "topRatedUrl": "https://www.zara.com/women-tops",
+            "sponsoredUrl": "https://www.zara.com/women-new-arrivals",
+            "items": [
+                "tops",
+                "t shirt",
+                "shirt",
+                "co ords",
+                "blazers",
+                "tunics"
+            ]
+        },
+        {
+            "name": "bottom",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "jeans",
+                "trousers",
+                "pallazo",
+                "leggings",
+                "shirts"
+            ]
+        },
+        {
+            "name": "inner wear",
+            "img": "https://images.unsplash.com/photo-1574312290483-e18985c54d3e?w=400&q=80",
+            "topRatedUrl": "https://www.victoriassecret.com/bras",
+            "sponsoredUrl": "https://www.victoriassecret.com/panties",
+            "items": [
+                "panties",
+                "bras",
+                "shorts"
+            ]
+        },
+        {
+            "name": "ethnic wear",
+            "img": "https://images.unsplash.com/photo-1627885744838-898075677d33?w=400&q=80",
+            "topRatedUrl": "https://www.fabindia.com/women-ethnic",
+            "sponsoredUrl": "https://www.fabindia.com/women-fusion",
+            "items": [
+                "silk sarees",
+                "cotton sarees",
+                "kurta set",
+                "lehangas",
+                "half sarees",
+                "dupattas"
+            ]
+        },
+        {
+            "name": "sports wear",
+            "img": "https://images.unsplash.com/photo-1493655161922-ef98929de9d8?w=400&q=80",
+            "topRatedUrl": "https://www.lululemon.com/women-yoga",
+            "sponsoredUrl": "https://www.lululemon.com/women-running",
+            "items": [
+                "t shirt",
+                "tracks",
+                "sports bra",
+                "shoes"
+            ]
+        },
+        {
+            "name": "accessories",
+            "img": "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=400&q=80",
+            "topRatedUrl": "https://www.chanel.com/bags",
+            "sponsoredUrl": "https://www.chanel.com/jewelry",
+            "items": [
+                "belts",
+                "sunglasses",
+                "socks",
+                "hair product kit",
+                "makeup kit"
+            ]
+        }
+    ],
+    "musical-instrument": [
+        {
+            "name": "keyboard",
+            "img": "Images/keyboard.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "drums set",
+            "img": "Images/drumsset.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "Guitar",
+            "img": "Images/guitar.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "Acoustic",
+                "Classical",
+                "Semi-Acoustic",
+                "Electric"
+            ]
+        },
+        {
+            "name": "violin",
+            "img": "Images/violin.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "piano",
+            "img": "Images/piano.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "karaoke",
+            "img": "Images/karaoke.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        },
+        {
+            "name": "DJ disc",
+            "img": "Images/djdisc.png",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": []
+        }
+    ],
+    "bags-footwear": [
+        {
+            "name": "Womens Footwear",
+            "img": "Images/womensfootwear.png",
+            "topRatedUrl": "https://www.gucci.com/women-shoes",
+            "sponsoredUrl": "https://www.gucci.com/new-collection",
+            "items": [
+                "casual shoes",
+                "flat sandals",
+                "heals",
+                "formal",
+                "cut shoes",
+                "formal shoes",
+                "sports shoes"
+            ]
+        },
+        {
+            "name": "Mens Footwear",
+            "img": "Images/mensfootwear.png",
+            "topRatedUrl": "https://www.nike.com/jordan",
+            "sponsoredUrl": "https://www.nike.com/running",
+            "items": [
+                "casual shoes",
+                "formal shoes",
+                "sports shoes",
+                "boots",
+                "loafers",
+                "slippers"
+            ]
+        },
+        {
+            "name": "Kids Footwear",
+            "img": "Images/kidsfootwear.png",
+            "topRatedUrl": "https://www.adidas.com/kids-shoes",
+            "sponsoredUrl": "https://www.adidas.com/originals",
+            "items": [
+                "boys shoes",
+                "girls shoes",
+                "sandals",
+                "flipflops",
+                "casual shoes"
+            ]
+        },
+        {
+            "name": "Womens bag",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "backpack",
+                "handbag",
+                "slingbag",
+                "clutches",
+                "wallets"
+            ]
+        },
+        {
+            "name": "mens bags",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "backpack",
+                "crossbody bag",
+                "laptop bag"
+            ]
+        },
+        {
+            "name": "Travel Bags",
+            "img": "Images/travelbag.png",
+            "topRatedUrl": "https://www.samsonite.com/luggage",
+            "sponsoredUrl": "https://www.samsonite.com/backpacks",
+            "items": [
+                "backpacks",
+                "trollies"
+            ]
+        }
+    ],
+    "kids-toddlers": [
+        {
+            "name": "Girls Clothing",
+            "img": "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=400&q=80",
+            "topRatedUrl": "https://www.carters.com/baby-girl",
+            "sponsoredUrl": "https://www.carters.com/toddler-girl",
+            "items": [
+                "frock",
+                "dress set",
+                "t shirt",
+                "shorts"
+            ]
+        },
+        {
+            "name": "Boys Clothing",
+            "img": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=400&q=80",
+            "topRatedUrl": "https://www.gap.com/boys",
+            "sponsoredUrl": "https://www.gap.com/toddler-boys",
+            "items": [
+                "dress set",
+                "t shrit",
+                "shorts"
+            ]
+        },
+        {
+            "name": "kids footwear",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
+            "topRatedUrl": "#",
+            "sponsoredUrl": "#",
+            "items": [
+                "boys shoes",
+                "girls shoes",
+                "sandals",
+                "flipflops",
+                "casual shoes"
+            ]
+        }
+    ]
+}
